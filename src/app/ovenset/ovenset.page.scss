@@ -1,0 +1,43 @@
+#set {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+    padding-bottom: 25%;
+    //transform: translateY(-50%);
+  }
+  
+  #set strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #set p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #set a {
+    text-decoration: none;
+  }
+
+  ion-select {
+    /* Applies to the value and placeholder color */
+    color: #545ca7;
+  
+    /* Set a different placeholder color */
+    --placeholder-color: #971e49;
+  
+    /* Set full opacity on the placeholder */
+    --placeholder-opacity: 1;
+  }
+
+  #later {
+    display: none;
+  }

@@ -1,0 +1,8 @@
+{
+  "name": "SmartOven",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "7bf93701"
+}
