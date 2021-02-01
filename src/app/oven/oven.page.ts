@@ -1,41 +1,80 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { Component, OnInit } from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { MenuController } from "@ionic/angular";
 
 @Component({
-  selector: 'app-oven',
-  templateUrl: './oven.page.html',
-  styleUrls: ['./oven.page.scss'],
+  selector: "app-oven",
+  templateUrl: "./oven.page.html",
+  styleUrls: ["./oven.page.scss"],
 })
-
 export class OvenPage implements OnInit {
-
-  constructor(public menu:MenuController) { 
+  constructor(public menu: MenuController) {
     this.menu.swipeGesture(true);
+  }
+
+  timeLeft: number = 60;
+  intervalCountdown;
+
+  startCountdown() {
+    this.intervalCountdown;
+    this.intervalCountdown = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+      }
+    }, 1000);
+  }
+
+  pauseCountdown() {
+    clearInterval(this.intervalCountdown);
+  }
+
+  resetCountdown() {
+
+  }
+
+  timePassed: number = 0;
+  intervalTimer;
+
+  startTimer() {
+    this.intervalTimer;
+    this.intervalTimer = setInterval(() => {
+      this.timePassed++;
+    }, 1000);
+  }
+
+  pauseTimer() {
+    clearInterval(this.intervalTimer);
+  }
+
+  
+  resetTimer() {
+    this.timePassed = 0;
   }
 
   ionViewDidEnter() {
     this.menu.swipeGesture(true);
-  };
+  }
 
   //
   showStart() {
     console.log("showStart() called");
-    document.getElementById('start').style.display = 'block';
-  };
+    document.getElementById("start").style.display = "block";
+  }
 
   hideStart() {
     console.log("hideStart() called");
-    document.getElementById('start').style.display = 'none';
-  };
+    document.getElementById("start").style.display = "none";
+  }
 
   showSet() {
-    document.getElementById('set').style.display = 'block';
-  };
+    document.getElementById("set").style.display = "block";
+  }
 
   hideSet() {
-    document.getElementById('set').style.display = 'none';
-  };
+    document.getElementById("set").style.display = "none";
+  }
 
   //
 
@@ -43,26 +82,27 @@ export class OvenPage implements OnInit {
   toggleModes() {
     this.stateModelist = !this.stateModelist;
     if (this.stateModelist) {
-      document.getElementById('modelist').style.display = 'block';
-      document.getElementById('showModesBtn').innerHTML = 'Hide';
-
+      document.getElementById("modelist").style.display = "block";
+      document.getElementById("showModesBtn").innerHTML = "Hide";
     } else {
-      document.getElementById('modelist').style.display = 'none';
-      document.getElementById('showModesBtn').innerHTML = 'Show';
+      document.getElementById("modelist").style.display = "none";
+      document.getElementById("showModesBtn").innerHTML = "Show";
     }
   }
 
   showModes() {
     console.log("showModes() called");
-    document.getElementById('modelist').style.display = 'block';
-    document.getElementById('mdoelistBtn').innerHTML = "<ion-button id='hideModesBtn' (click)='hideModes()' size='small'>Hide</ion-button>";
-  };
+    document.getElementById("modelist").style.display = "block";
+    document.getElementById("mdoelistBtn").innerHTML =
+      "<ion-button id='hideModesBtn' (click)='hideModes()' size='small'>Hide</ion-button>";
+  }
 
   hideModes() {
     console.log("hideModes() called");
-    document.getElementById('modelist').style.display = 'none';
-    document.getElementById('mdoelistBtn').innerHTML = "<ion-button id='showModesBtn' (click)='showModes()' size='small'>Show</ion-button>";
-  };
+    document.getElementById("modelist").style.display = "none";
+    document.getElementById("mdoelistBtn").innerHTML =
+      "<ion-button id='showModesBtn' (click)='showModes()' size='small'>Show</ion-button>";
+  }
 
   //
 
@@ -70,35 +110,35 @@ export class OvenPage implements OnInit {
   togglePicker() {
     this.statePicker = !this.statePicker;
     if (this.statePicker) {
-      document.getElementById('datetimePicker').style.display = 'block';
+      document.getElementById("datetimePicker").style.display = "block";
     } else {
-      document.getElementById('datetimePicker').style.display = 'none';
+      document.getElementById("datetimePicker").style.display = "none";
     }
   }
 
   showPicker() {
-    document.getElementById('datetimePicker').style.display = 'block';
-  };
+    document.getElementById("datetimePicker").style.display = "block";
+  }
 
   hidePicker() {
-    document.getElementById('datetimePicker').style.display = 'none';
-  };
+    document.getElementById("datetimePicker").style.display = "none";
+  }
 
   //
   showWorking() {
-    document.getElementById('working').style.display = 'block';
-  };
+    document.getElementById("working").style.display = "block";
+  }
 
   hideWorking() {
-    document.getElementById('working').style.display = 'none';
-  };
+    document.getElementById("working").style.display = "none";
+  }
 
   //
   start() {
     console.log("Start()");
     this.hideStart();
     this.showSet();
-  };
+  }
 
   set() {
     console.log("Set()");
@@ -114,7 +154,5 @@ export class OvenPage implements OnInit {
   }
 
   //
-  ngOnInit() {
-  };
-
+  ngOnInit() {}
 }

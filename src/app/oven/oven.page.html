@@ -25,6 +25,7 @@
         >UI Components</a
       >
     </p>
+
     <ion-button id="startBtn" (click)="start()">Start</ion-button>
     <!-- <ion-button routerLink='/ovenset'>Start</ion-button> -->
   </div>
@@ -206,8 +207,16 @@
     <div>
       <ion-grid>
         <ion-row>
-          <ion-col> 1 </ion-col>
-          <ion-col> 2 </ion-col>
+          <ion-col>
+            <button (click)="startCountdown()">Start Timer</button>
+            <button (click)="pauseCountdown()">Pause</button>
+            <p>{{timeLeft}} Seconds Left...</p>
+          </ion-col>
+          <ion-col>
+            <button (click)="startTimer()">Start Timer</button>
+            <button (click)="pauseTimer()">Pause</button>
+            <p>{{timePassed}} Seconds passed...</p>
+          </ion-col>
         </ion-row>
         <ion-row>
           <ion-col> 3 </ion-col>
