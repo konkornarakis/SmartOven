@@ -17,10 +17,11 @@ export class HotplatePage implements OnInit {
   }
 
   toggleClassTest() {
-    if (document.getElementById("container2").className === "") {
-      document.getElementById("container2").className = "ion-hide";
+    let el = document.getElementById("container2");
+    if (el.classList.contains("ion-hide")) {
+      el.classList.remove("ion-hide");
     } else {
-      document.getElementById("container2").className = "";
+      el.classList.add("ion-hide")
     }
   }
 
