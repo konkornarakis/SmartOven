@@ -22,25 +22,6 @@ export class OvenPage implements OnInit {
   }
 
   //
-  showStart() {
-    console.log("showStart() called");
-    document.getElementById("start").style.display = "block";
-  }
-
-  hideStart() {
-    console.log("hideStart() called");
-    document.getElementById("start").style.display = "none";
-  }
-
-  showSet() {
-    document.getElementById("set").style.display = "block";
-  }
-
-  hideSet() {
-    document.getElementById("set").style.display = "none";
-  }
-
-  //
 
   stateModelist: boolean = false;
   toggleModes() {
@@ -97,21 +78,32 @@ export class OvenPage implements OnInit {
     document.getElementById("working").style.display = "none";
   }
 
+  //Page loading
+
   //
+  showStart() {
+    console.log("showStart() called");
+    document.getElementById("start").style.display = "block";
+  }
+
+  hideStart() {
+    console.log("hideStart() called");
+    document.getElementById("start").style.display = "none";
+  }
+
+  showSet() {
+    document.getElementById("set").style.display = "block";
+  }
+
+  hideSet() {
+    document.getElementById("set").style.display = "none";
+  }
+
   start() {
+    //Set the oven here
     console.log("Start()");
     this.hideStart();
     this.showSet();
-  }
-
-  set() {
-    console.log("Set()");
-    this.hideSet();
-    this.showWorking();
-    this.startTimer();
-    console.log("Timer started");
-    this.startCountdown();
-    console.log("Countdown started");
   }
 
   cancelSet() {
@@ -121,6 +113,26 @@ export class OvenPage implements OnInit {
     this.showStart();
   }
 
+  startBaking() {
+    //shows working page here
+    console.log("Set()");
+    this.hideSet();
+    this.showWorking();
+    this.startTimer();
+    console.log("Timer started");
+    this.startCountdown();
+    console.log("Countdown started");
+  }
+
+  bakingToStart() {
+    console.log("bakingToStart()");
+    this.hideWorking;
+    location.reload();
+    this.showStart();
+  }
+  //Page loading - end
+
+  //Set duration
   showDuration() {
     console.log("Duration is: " + this.duration);
   }
@@ -189,7 +201,17 @@ export class OvenPage implements OnInit {
     );
   }
 
-  timeLeft: number = 2;
+  status: string = "Working";
+  temperature: string = "250";
+  
+
+  whenCountdownTimerDone() {
+    // console.log("whenCountdownTimerDone()");
+    this.status = "Done!"
+    this.temperature = "0";
+  }
+
+  timeLeft: number = 5;
   intervalCountdown;
 
   startCountdown() {
@@ -198,9 +220,11 @@ export class OvenPage implements OnInit {
       if (this.timeLeft > 0) {
         this.timeLeft--;
       }
-      // else {
-      //   this.timeLeft = 2;
-      // }
+      else {
+        // console.log("Countdown timer done");
+        this.whenCountdownTimerDone();
+        return;
+      }
     }, 1000);
   }
 
@@ -216,7 +240,7 @@ export class OvenPage implements OnInit {
   startTimer() {
     this.intervalTimer;
     this.intervalTimer = setInterval(() => {
-      this.timePassed++;
+      if (this.timeLeft > 0) this.timePassed++;
     }, 1000);
   }
 

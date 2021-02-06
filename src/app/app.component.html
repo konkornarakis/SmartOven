@@ -4,7 +4,7 @@
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
-        <p id="time" >{{today | date:'mediumTime'}}</p>
+        <p id="time" class="ion-padding-start">{{today | date:'mediumTime'}}</p>
       </ion-toolbar>
     </ion-header>
   
@@ -12,15 +12,15 @@
       <ion-list>
         <ion-menu-toggle>
           <ion-item>
-            <ion-icon name="mail" slot="start"></ion-icon>
-            <ion-label>Inbox</ion-label>
+            <ion-icon name="settings-outline" slot="start"></ion-icon>
+            <ion-label>Settings</ion-label>
           </ion-item>
         </ion-menu-toggle>
 
         <ion-menu-toggle>
           <ion-item>
-            <ion-icon name="paper-plane" slot="start"></ion-icon>
-            <ion-label>Outbox</ion-label>
+            <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+            <ion-label>Info</ion-label>
           </ion-item>
         </ion-menu-toggle>
 

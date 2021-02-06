@@ -192,7 +192,7 @@
     </div>
 
     <div>
-      <ion-fab (click)="set()" id="confirm" horizontal="center">
+      <ion-fab (click)="startBaking()" id="confirm" horizontal="center">
         <ion-fab-button>
           <ion-icon name="checkmark-outline"></ion-icon>
         </ion-fab-button>
@@ -207,41 +207,38 @@
   </div>
 
   <div id="working" class="container">
-    <strong>Working</strong>
-    <div>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <!-- <button (click)="startCountdown()">Start Timer</button>
-            <button (click)="pauseCountdown()">Pause</button> -->
-            <ion-label>Time left</ion-label>
-            <p>{{timeLeft}}</p>
-            <p></p
-          ></ion-col>
+    <strong>{{status}}</strong>
+    <ion-grid class="ion-margin">
+      <ion-row>
+        <ion-col>
+          <ion-label>Time left</ion-label>
+          <p>{{timeLeft}}</p>
+          <p></p
+        ></ion-col>
 
-          <ion-col>
-            <!-- <button (click)="startTimer()">Start Timer</button>
+        <ion-col>
+          <!-- <button (click)="startTimer()">Start Timer</button>
             <button (click)="pauseTimer()">Pause</button> -->
-            <ion-label>Time passed</ion-label>
-            <p>{{timePassed}}</p>
-            <p></p
-          ></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-label>Temperature</ion-label>
-            <p>250 C</p>
-          </ion-col>
-          <ion-col>
-            <ion-label>Mode</ion-label>
-            <p>Grill</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+          <ion-label>Time passed</ion-label>
+          <p>{{timePassed}}</p>
+          <p></p
+        ></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>Temperature</ion-label>
+          <p>{{temperature}} C</p>
+        </ion-col>
+        <ion-col>
+          <ion-label>Mode</ion-label>
+          <p>Grill</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    <div id="workingBtns">
-      <ion-button id="doneCooking"> Done </ion-button>
+    <div class="ion-margin-top" id="workingBtns">
+      <ion-button id="editWorking"> Edit </ion-button>
+      <ion-button class="ion-margin" id="doneCooking" (click)="bakingToStart()"> Done </ion-button>
       <ion-button id="plusFive"> +5 </ion-button>
     </div>
   </div>
