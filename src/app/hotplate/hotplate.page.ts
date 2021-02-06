@@ -16,6 +16,14 @@ export class HotplatePage implements OnInit {
     this.menu.swipeGesture(true);
   }
 
+  toggleClassTest() {
+    if (document.getElementById("container2").className === "") {
+      document.getElementById("container2").className = "ion-hide";
+    } else {
+      document.getElementById("container2").className = "";
+    }
+  }
+
   ngOnInit() {
   }
 

@@ -14,11 +14,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <div class="" id="container">
     <strong>Ready to cook with a hotplate?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <br>
-    <ion-button routerLink='/hotplateset'>Start</ion-button>
+    <ion-button class="ion-margin-top" (click)="toggleClassTest()">Toggle</ion-button>
+  </div>
+
+  <div class="ion-hide" id="container2">
+    <p>Hidden paragraph</p>
   </div>
 
 </ion-content>
