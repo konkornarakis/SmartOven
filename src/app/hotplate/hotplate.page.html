@@ -16,13 +16,229 @@
 
   <div class="" id="container">
     <strong>Ready to cook with a hotplate?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <ion-button class="ion-margin-top" (click)="toggleClassTest()">Toggle</ion-button>
+    <p>
+      Start with Ionic
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://ionicframework.com/docs/components"
+        >UI Components</a
+      >
+    </p>
+    <ion-button class="ion-margin-top" (click)="mainToSelect()"
+      >Start</ion-button
+    >
   </div>
 
   <div class="ion-hide" id="container2">
     <p>Hidden paragraph</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="hotplate" id="hotplate1"></div>
+          <ion-label>Hotplate 1</ion-label>
+        </ion-col>
+        <ion-col>
+          <div class="hotplate" id="hotplate2"></div>
+          <ion-label>Hotplate 2</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="hotplate" id="hotplate3"></div>
+          <ion-label>Hotplate 3</ion-label>
+        </ion-col>
+        <ion-col>
+          <div class="hotplate" id="hotplate4"></div>
+          <ion-label>Hotplate 4</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button class="ion-margin-top" (click)="selectToMain()"
+      >Back</ion-button
+    >
+    <ion-button class="ion-margin-top" (click)="selectToSet()"
+      >Select</ion-button
+    >
   </div>
 
-</ion-content>
+  <div class="ion-hide" id="container3">
+    <div>
+      <strong>Set the oven</strong>
+      <p>
+        Start with Ionic
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://ionicframework.com/docs/components"
+          >UI Components</a
+        >
+      </p>
+    </div>
 
+    <div>
+      <strong>Pick temperature</strong>
+      <ion-range min="0" max="250" pin="true"></ion-range>
+    </div>
+
+    <div>
+      <strong>Pick duration</strong>
+      <ion-item>
+        <!-- <ion-label>Duration</ion-label> -->
+        <!-- <ion-datetime
+          [(ngModel)]="duration"
+          (ionChange)="showDuration();"
+          displayFormat="H:m"
+          hourValues="0,1,2,3,4,5,6,7,8"
+          minuteValues="1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+            20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+            30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+            40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+            50, 51, 52, 53, 54, 55, 56, 57, 58, 59"
+        ></ion-datetime> -->
+
+        <ion-button size="small"> Pick </ion-button>
+      </ion-item>
+    </div>
+
+    <div id="container3">
+      <strong>Pick mode</strong>
+      <ion-list id="modelist">
+        <ion-radio-group value="biff">
+          <ion-item>
+            <ion-label>Biff</ion-label>
+            <img src="./assets/ovenModes/air-fry.gif" />
+            <ion-radio slot="start" value="1"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Griff</ion-label>
+            <img src="./assets/ovenModes/broil.gif" />
+            <ion-radio slot="start" value="2"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/convection-bake.gif" />
+            <ion-radio slot="start" value="3"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/dehydrate.gif" />
+            <ion-radio slot="start" value="4"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/grill.gif" />
+            <ion-radio slot="start" value="5"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/keepwarm.gif" />
+            <ion-radio slot="start" value="6"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/proof.gif" />
+            <ion-radio slot="start" value="7"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/reheat.gif" />
+            <ion-radio slot="start" value="8"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/roast.gif" />
+            <ion-radio slot="start" value="9"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/slow-cook.gif" />
+            <ion-radio slot="start" value="10"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/stone-fire.gif" />
+            <ion-radio slot="start" value="11"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Buford</ion-label>
+            <img src="./assets/ovenModes/toast.gif" />
+            <ion-radio slot="start" value="12"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+      <div id="modelistBtn">
+        <ion-button id="showModesBtn" size="small"
+          >Show</ion-button
+        >
+        <!-- <ion-button id="hideModesBtn" (click)="hideModes()" size="small">Hide</ion-button> -->
+      </div>
+    </div>
+
+    <div id="startTimeFull">
+      <div id="startTime">
+        <strong>Pick start time</strong>
+        <ion-radio-group value="biff">
+          <!-- <ion-list-header>
+                <ion-label>Name</ion-label>
+              </ion-list-header> -->
+
+          <ion-item>
+            <ion-label>Now</ion-label>
+            <ion-radio
+              slot="start"
+              value="1"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Later</ion-label>
+            <ion-radio
+              slot="start"
+              value="2"
+            ></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+
+      <div id="datetimePicker">
+        <ion-datetime
+          displayFormat="MM DD YY"
+          placeholder="Select Date"
+          id="later"
+        ></ion-datetime>
+      </div>
+    </div>
+
+    <div>
+      <ion-fab (click)="setToWorking()" id="confirm" horizontal="center">
+        <ion-fab-button>
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+      <ion-fab (click)="setToSelect()" horizontal="end">
+        <ion-fab-button color="danger" routerLink="/oven">
+          <ion-icon name="close"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+  </div>
+  
+  <div class="ion-hide" id="container4">
+    <ion-button class="ion-margin-top" (click)="workingToMain()"
+      >Done</ion-button
+    >
+  </div>
+</ion-content>
