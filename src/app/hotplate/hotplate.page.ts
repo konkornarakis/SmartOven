@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { Component, OnInit } from "@angular/core";
+import { MenuController } from "@ionic/angular";
 
 @Component({
-  selector: 'app-hotplate',
-  templateUrl: './hotplate.page.html',
-  styleUrls: ['./hotplate.page.scss'],
+  selector: "app-hotplate",
+  templateUrl: "./hotplate.page.html",
+  styleUrls: ["./hotplate.page.scss"],
 })
 export class HotplatePage implements OnInit {
-
-  constructor(public menu:MenuController) { 
+  constructor(public menu: MenuController) {
     this.menu.swipeGesture(true);
   }
 
@@ -21,18 +20,22 @@ export class HotplatePage implements OnInit {
     if (el.classList.contains("ion-hide")) {
       el.classList.remove("ion-hide");
     } else {
-      el.classList.add("ion-hide")
+      el.classList.add("ion-hide");
     }
   }
 
   mainToSelect() {
-    document.getElementById("container").classList.add("ion-hide");
-    document.getElementById("container2").classList.remove("ion-hide");
+    if (!document.getElementById("container1").classList.contains("ion-hide")) {
+      console.log("mainToSelect(), container1 doesnt contain ion-hide");
+      document.getElementById("container2").classList.remove("ion-hide");
+      document.getElementById("container1").classList.add("ion-hide");
+      
+    }
   }
 
   selectToMain() {
     document.getElementById("container2").classList.add("ion-hide");
-    document.getElementById("container").classList.remove("ion-hide");
+    document.getElementById("container1").classList.remove("ion-hide");
   }
 
   selectToSet() {
@@ -55,7 +58,17 @@ export class HotplatePage implements OnInit {
     document.getElementById("container").classList.remove("ion-hide");
   }
 
-  ngOnInit() {
+  temperature: string = "0 C";
+  status: string = "Working";
+  timePassed: number = 50;
+  timeLeft: number = 20;
+
+  showDuration() {
+    console.log("Duration is: " + this.duration);
   }
 
+  duration: any;
+
+
+  ngOnInit() {}
 }
