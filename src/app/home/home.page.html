@@ -2,7 +2,6 @@
   <ion-toolbar>
     <ion-title>Smart Oven</ion-title>
     <ion-buttons slot="start">
-      
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
@@ -16,9 +15,76 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to cook?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 
+      <strong>Ready to cook?</strong>
+      <p>Click to start</p>
+      <ion-button fill="clear">Oven</ion-button>
+      <ion-button fill="clear">Hotplates</ion-button>
+
+      <ion-button id="dashboardBtn" fill="clear" vertical="bottom" (click)="toggleDashboard();">Dashboard</ion-button>  
+    </div>
+    <!-- <ion-button class="ion-margin" fill="clear">Oven</ion-button>
+    <ion-button class="ion-margin" fill="clear">Hotplate</ion-button> -->
+    <div id="dashboard" class="ion-hide">
+      <ion-list>
+        <ion-list-header> <span>Working now</span> </ion-list-header>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Hotplate 1</h2>
+            <h3>00:10:22 left</h3>
+            <p>Finish time: 1:10 PM, <br> Elapsed time: 2:33, 100 C</p>
+          </ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Hotplate 3</h2>
+            <h3>00:00:12 left</h3>
+            <p>Finish time: 12:10 PM, <br> Elapsed time: 5:43, 140 C</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+  
+      <ion-list>
+        <ion-list-header> <span>Recent</span> </ion-list-header>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Oven</h2>
+            <h3>11:21 AM</h3>
+            <p>55 minutes, 200 C, Grill<p>
+          </ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Hotplate 1</h2>
+            <h3>10:30 AM</h3>
+            <p>10 minutes, 100 C</p>
+          </ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Hotplate 4</h2>
+            <h3>10:30 AM</h3>
+            <p>10 minutes, 100 C</p>
+          </ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Hotplate 1</h2>
+            <h3>9:30 AM</h3>
+            <p>5 minutes, 120 C</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-fab id="cancelBtn" class="ion-hide" vertical="bottom" horizontal="end" slot="fixed" (click)="toggleDashboard()">
+      <ion-fab-button color="danger">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 </ion-content>
-

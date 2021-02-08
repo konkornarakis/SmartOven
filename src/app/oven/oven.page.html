@@ -17,12 +17,12 @@
   <div id="start" class="container">
     <strong>Ready to cook with the oven ?</strong>
     <p>
-      Start with Ionic
+      Start with setting the 
       <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://ionicframework.com/docs/components"
-        >UI Components</a
+        >oven</a
       >
     </p>
 
@@ -34,13 +34,7 @@
     <div>
       <strong>Set the oven</strong>
       <p>
-        Start with Ionic
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://ionicframework.com/docs/components"
-          >UI Components</a
-        >
+        Choose how you want it
       </p>
     </div>
 
@@ -56,6 +50,7 @@
         <ion-datetime
           [(ngModel)]="duration"
           (ionChange)="showDuration();"
+          placeholder="Select duration"
           displayFormat="H:m"
           hourValues="0,1,2,3,4,5,6,7,8"
           minuteValues="1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
@@ -74,73 +69,73 @@
       <ion-list id="modelist">
         <ion-radio-group value="biff">
           <ion-item>
-            <ion-label>Biff</ion-label>
+            <ion-label>Air fry</ion-label>
             <img src="./assets/ovenModes/air-fry.gif" />
             <ion-radio slot="start" value="1"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Griff</ion-label>
+            <ion-label>Broil</ion-label>
             <img src="./assets/ovenModes/broil.gif" />
             <ion-radio slot="start" value="2"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Convection bake</ion-label>
             <img src="./assets/ovenModes/convection-bake.gif" />
             <ion-radio slot="start" value="3"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Dehydrate</ion-label>
             <img src="./assets/ovenModes/dehydrate.gif" />
             <ion-radio slot="start" value="4"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Grill</ion-label>
             <img src="./assets/ovenModes/grill.gif" />
             <ion-radio slot="start" value="5"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Keep warm</ion-label>
             <img src="./assets/ovenModes/keepwarm.gif" />
             <ion-radio slot="start" value="6"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Proof</ion-label>
             <img src="./assets/ovenModes/proof.gif" />
             <ion-radio slot="start" value="7"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Reheat</ion-label>
             <img src="./assets/ovenModes/reheat.gif" />
             <ion-radio slot="start" value="8"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Roast</ion-label>
             <img src="./assets/ovenModes/roast.gif" />
             <ion-radio slot="start" value="9"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Slow cook</ion-label>
             <img src="./assets/ovenModes/slow-cook.gif" />
             <ion-radio slot="start" value="10"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Stone fire</ion-label>
             <img src="./assets/ovenModes/stone-fire.gif" />
             <ion-radio slot="start" value="11"></ion-radio>
           </ion-item>
 
           <ion-item>
-            <ion-label>Buford</ion-label>
+            <ion-label>Toast</ion-label>
             <img src="./assets/ovenModes/toast.gif" />
             <ion-radio slot="start" value="12"></ion-radio>
           </ion-item>
@@ -192,7 +187,9 @@
     </div>
 
     <div>
-      <ion-fab (click)="startBaking()" id="confirm" horizontal="center">
+      <ion-button color="danger" (click)="cancelSet()" horizontal="end">Cancel</ion-button>
+      <ion-button (click)="startBaking()" id="confirm" horizontal="center">Start</ion-button>
+      <!-- <ion-fab (click)="startBaking()" id="confirm" horizontal="center">
         <ion-fab-button>
           <ion-icon name="checkmark-outline"></ion-icon>
         </ion-fab-button>
@@ -202,7 +199,7 @@
         <ion-fab-button color="danger" routerLink="/oven">
           <ion-icon name="close"></ion-icon>
         </ion-fab-button>
-      </ion-fab>
+      </ion-fab> -->
     </div>
   </div>
 
@@ -212,7 +209,7 @@
       <ion-row>
         <ion-col>
           <ion-label>Time left</ion-label>
-          <p>{{timeLeft}}</p>
+          <p>{{timeLeft}} seconds</p>
           <p></p
         ></ion-col>
 
@@ -220,7 +217,7 @@
           <!-- <button (click)="startTimer()">Start Timer</button>
             <button (click)="pauseTimer()">Pause</button> -->
           <ion-label>Time passed</ion-label>
-          <p>{{timePassed}}</p>
+          <p>{{timePassed}} seconds</p>
           <p></p
         ></ion-col>
       </ion-row>

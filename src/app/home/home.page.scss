@@ -25,3 +25,26 @@
 #container a {
   text-decoration: none;
 }
+
+#dashboard {
+  text-align: center;
+
+  left: 0;
+  right: 0;
+  top: 20%;
+  padding-bottom: 20%;
+}
+
+#dashboardBtn {
+  padding-top: 5%;
+}
+
+#cancel {
+  margin-right: 10%;
+}
+
+span {
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--ion-color-primary);
+}

@@ -161,11 +161,13 @@
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
-  background-color: var(--ion-color-secondary);
+  background-color: var(--ion-color-primary);
   margin: auto;
+  border: 1.5px solid black;
 }
 
 .hotplate:active {
-  background-color: var(--ion-color-primary);
-  border: 8px solid var(--ion-color-secondary);
+  background-color: var(--ion-color-secondary);
+  border: 8px solid var(--ion-color-primary);
 }
+
